@@ -10,12 +10,15 @@
   <body>
     <h1>no file link found</h1>
 <script>
+  // this sript track file link clicks and redirects to file
+  // supposed URL is yoursite.com/this_page.html?t=samePathTargetFile.foo
   var regex = /\?t=(.*)/;
   var targetLink = document.location.href.match(regex)[1];
   redirectCallback = (targetLink) ? function() {
     var link = 	document.location.href.match(regex)[1];
     document.location = link;
     } : function () {};
+  
   ga('create', 'UA-84672218-1', 'auto');
   ga('send', 'pageview', {
   hitCallback:redirectCallback
