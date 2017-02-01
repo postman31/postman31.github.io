@@ -14,7 +14,7 @@
   <body>
     <h1>no such file</h1>
 <script>
-  var regex = /\?t=(.*)/g.
+  var regex = /\?t=(.*)/g;
   var targetLink = document.location.pathname.match(regex)[1];
   redirectCallback = (targetLink) ? function() {
     var link = 	document.location.pathname.match(regex)[1];
