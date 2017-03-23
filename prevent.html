@@ -16,9 +16,13 @@
     </form>
       <script>
         document.querySelector("#my-from").addEventListener("submit", function(event){
-            alert("preventDefault will stop processing form!")
+            console.log("preventDefault will stop processing form!")
             event.preventDefault();
         }, false);
+        document.querySelector("#my-from").addEventListener("submit", function(event){
+            console.log("This was prevented...")
+            event.preventDefault();
+        }, false);        
     </script>
   </body>
 </html>
