@@ -18,7 +18,7 @@
         document.querySelector("#my-from").addEventListener("submit", function(event){
             console.log("preventDefault will stop processing form!")
             event.preventDefault();
-        }, false);
+        }); // w/o uswCapture false
         document.querySelector("#my-from").addEventListener("submit", function(event){
             console.log("This was prevented...")
             event.preventDefault();
