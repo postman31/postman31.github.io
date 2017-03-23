@@ -1,0 +1,24 @@
+<html>
+<head>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+</script>
+</head>
+  <body>
+    <h1>preventDefault hack</h1>
+    <form action="" method="post" id="my-from">
+      <label for="POST-name">Name:</label>
+      <input id="POST-name" type="text">
+      <input type="submit" value="Save">
+    </form>
+      <script>
+        document.querySelector("#my-from").addEventListener("submit", function(event){
+            alert("preventDefault will stop processing form!")
+            event.preventDefault();
+        }, false);
+    </script>
+  </body>
+</html>
