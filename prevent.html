@@ -25,9 +25,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <script>
         document.querySelector("#my-from").addEventListener("submit", function(event){
             console.log("preventDefault will stop processing form!")
-            event.preventDefault();
+          return false;
+            //event.preventDefault();
             //event.stopPropagation();
-        }, true); // w/o uswCapture false     
+        }, false); // w/o uswCapture false     
     </script>
   </body>
 </html>
