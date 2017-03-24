@@ -28,9 +28,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             event.preventDefault();
             event.stopPropagation();
         }); // w/o uswCapture false
-        document.querySelector("#my-from").addEventListener("submit", function(event){
-            console.log("This was prevented...")
-            event.preventDefault();
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+          console.log("DOM fully loaded and parsed");
+          document.querySelector("#my-from").addEventListener("submit", function(event){
+          console.log("This was prevented...")
+          event.preventDefault();    
+  });
+       
+
         }, false);        
     </script>
   </body>
