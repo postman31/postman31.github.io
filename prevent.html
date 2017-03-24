@@ -27,13 +27,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             console.log("preventDefault will stop processing form!")
             event.preventDefault();
             //event.stopPropagation();
-        }); // w/o uswCapture false
+        }, true); // w/o uswCapture false
 
-        document.addEventListener("DOMContentLoaded", function(event) {
-          console.log("DOM fully loaded and parsed");
-          document.querySelector("#my-from").addEventListener("submit", function(event){
-          console.log("This was prevented...")
-          event.preventDefault();    
+   
   });
        
 
