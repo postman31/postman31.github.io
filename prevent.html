@@ -26,7 +26,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         document.querySelector("#my-from").addEventListener("submit", function(event){
             console.log("preventDefault will stop processing form!")
             event.preventDefault();
-            event.stopPropagation();
+            //event.stopPropagation();
         }); // w/o uswCapture false
 
         document.addEventListener("DOMContentLoaded", function(event) {
