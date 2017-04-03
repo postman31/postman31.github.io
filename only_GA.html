@@ -7,9 +7,9 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-84672218-1', 'auto');
-  ga((tracker) => {
+  ga((function(tracker) {
     var cid = tracker.get('clientId');
-    tracker.set('dimension2', clientId);
+    tracker.set('dimension2', cid);
     console.log(cid);
   });
   ga('send', 'pageview');
