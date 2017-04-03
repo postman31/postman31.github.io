@@ -7,13 +7,17 @@
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-84672218-1', 'auto');
-  var cid = ga.getAll()[0].get("clinetId");
-  console.log(cid);
-  ga('set', 'dimension2', cid);
+  ga((tracker) => {
+    var cid = tracker.get('clientId');
+    tracker.set('dimension2', clientId);
+    console.log(cid);
+  }
   ga('send', 'pageview');
 
   </script>
   </head>
   <body>
+    <h1>GA readyCallback test for plain GA</h1>
+    <p>only GA is called on this page</p>
   </body>
 </html>
