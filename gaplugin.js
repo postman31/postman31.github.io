@@ -12,7 +12,7 @@
   
   // Constructor for simoPlugin
   // Copies payload to custom host
-  var SimoPlugin = function(tracker) {
+  var ga2fb = function(tracker) {
     this.tracker = tracker;
     
     // Copy the original hit dispatch function
@@ -21,14 +21,15 @@
     // Modify the existing hit dispatcher to send a local copy of the hit
     this.tracker.set('sendHitTask', function(model) {
       originalSendHitTask(model); // Send the original hit as usual
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', 'http://process.simoahava.com/collect', true);
-      xhr.send(model.get('hitPayload'));
+      //var xhr = new XMLHttpRequest();
+      //xhr.open('POST', 'http://process.simoahava.com/collect', true);
+      //xhr.send(model.get('hitPayload'));
+      console.log(model.get('hitPayload'));
     });
   };
   
   // Set up a generic event dispatcher
-  SimoPlugin.prototype.trackEvent = function(evt) {
+  ga2fb.prototype.trackEvent = function(evt) {
     var c = evt['cat'];
     var a = evt['act'];
     var l = evt['lab'] || undefined;
@@ -41,5 +42,5 @@
     this.tracker.send('event', c, a, l, v, x);
   };
   
-  providePlugin('simoPlugin', SimoPlugin);
+  providePlugin('ga2fb', ga2fb); // simoPlugin', SimoPlugin
 })();
