@@ -30,7 +30,7 @@
       ga('provide', pluginName, pluginConstructor);
       console.log('plugin provided:');
       console.log(ga.q);
-    } esle {
+    } else {
       console.log('no ga object found');
     }
   };
