@@ -28,6 +28,10 @@
   var providePlugin = function(pluginName, pluginConstructor) {
     if (ga) { 
       ga('provide', pluginName, pluginConstructor);
+      console.log('plugin provided:');
+      console.log(ga.q);
+    } esle {
+      console.log('no ga object found');
     }
   };
   
