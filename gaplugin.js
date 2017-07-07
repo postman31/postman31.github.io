@@ -1,4 +1,17 @@
 (function() {
+  /*
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    var queue = (i[r].q=i[r].q||[]);
+    
+    queue.push(arguments);
+    if (arguments[0] == 'create') {
+    queue.push(['require', 'ga2fb']);
+    console.log('hello from hack');}
+  }
+    ,i[r].l=1*new Date()
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga')
+  */
+  /*
   !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
     n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
@@ -7,6 +20,7 @@
   var fbq = window.fbq;
   fbq('init', '379482319092836');
 
+*/
   // Assign the ga variable to the Google Analytics global function
   var ga = window[window['GoogleAnalyticsObject'] || 'ga'];
 
@@ -21,7 +35,7 @@
   // Copies payload to custom host
   var ga2fb = function(tracker) {
     this.tracker = tracker;
-    
+    console.log('hello from constructor');
     // Copy the original hit dispatch function
     var originalSendHitTask = this.tracker.get('sendHitTask');
     
@@ -31,7 +45,7 @@
       //var xhr = new XMLHttpRequest();
       //xhr.open('POST', 'http://process.simoahava.com/collect', true);
       //xhr.send(model.get('hitPayload'));
-      fbq('trackCustom', 'MyCustomEvent', {custom_param: 'custom_value'});
+      //fbq('trackCustom', 'MyCustomEvent', {custom_param: 'custom_value'});
       console.log(model.get('hitPayload'));
     });
   };
