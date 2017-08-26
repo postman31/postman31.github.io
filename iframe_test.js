@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var re = /https*:\/\/embeds\.audioboom\.com.+/
   var params = '';
   if (sessionStorage['gclid']) {
-    params += '&utm_source=tenk' +
+    params += '&utm_source=tenk&medium=adwords' +
     '&utm_campaign=' + sessionStorage['aw_campaign'] +
     '&utm_term=' + encodeURIComponent(sessionStorage['aw_term']) +
     '&utm_content=' + sessionStorage['aw_content'];
