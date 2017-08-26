@@ -1,7 +1,7 @@
 // Helper function to fetch URL parameters by key
 
 var getJsonFromUrl = function(key) {
-  var query = mlocation.substr(1);
+  var query = window.location.search.substr(1);
   var result = {};
   query.split("&").forEach(function(part) {
     var item = part.split("=");
@@ -10,8 +10,10 @@ var getJsonFromUrl = function(key) {
   return result[key]||null;
 }
 var aw_keys = ['gclid', 'aw_campaign', 'aw_content', 'aw_term'];
+
 if(getJsonFromUrl('gclid')) {
-  sessionStorage.['gclid'] = getJsonFromUrl('gclid');
+  console.log('gclid found');
+  sessionStorage['gclid'] = getJsonFromUrl('gclid');
   aw_keys.map(function(key) {
     var value = getJsonFromUrl(key);
     if (value) {
@@ -28,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
   if (sessionStorage['gclid']) {
     params += '&utm_source=tenk' +
     '&utm_campaign=' + sessionStorage['aw_campaign'] +
-    '&utm_term=' + sessionStorage['aw_term'] +
+    '&utm_term=' + encodeURIComponent(sessionStorage['aw_term']) +
     '&utm_content=' + sessionStorage['aw_content'];
   }
   frames.forEach(function(frame) {
@@ -36,7 +38,5 @@ document.addEventListener("DOMContentLoaded", function() {
     if (re.test(frame.src) && sessionStorage['gclid']) {
       frame.src += params;
     }
-    console.log(frame.src);
   });
-  console.log('DOMContentLoaded executed');
 });
