@@ -7,35 +7,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KP5Q5D');</script>
 <!-- End Google Tag Manager -->
-  
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-</script>
+
 </head>
   <body>
-    <h1>preventDefault hack</h1>
-    <form action="" method="post" id="my-from">
-      <label for="POST-name">Name:</label>
-      <input id="POST-name" type="text">
-      <input type="submit" value="Save">
-    </form>
-    <form action="" method="post" id="clean-form">
-      <label for="POST-name">Name:</label>
-      <input id="POST-name" type="text">
-      <input type="submit" value="Clean-Save">
-    </form>    
-      <script>
-        document.querySelector("#my-from").addEventListener("submit", function(event){
-          event.preventDefault();
-          event.stopPropagation();
-          console.log("preventDefault will stop processing form!")
-          return false;
-            //event.preventDefault();
-            //event.stopPropagation();
-        }, false); // w/o uswCapture false     
-    </script>
+    <h1>For tests and some tricks</h1>
+    <p>GTM Only installed</p>
   </body>
 </html>
