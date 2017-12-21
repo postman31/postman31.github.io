@@ -5,5 +5,10 @@
   <body>
     <h1>Sample Page</h1>
     <p id="hello">Hello, world!</p>
+    <script>
+      var h2 = document.createElement('h2');
+      h2.innerHTML = 'Hello again';
+      h2.appendChild(document.getElementById('hello'));
+    </script>
   </body>
 </html>
