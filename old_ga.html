@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-104159484-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        // Added lines
+        gaLoaded = function () {
+          console.log(document.cookie);
+        }
+        try {
+          ga.onload = gaLoaded
+        } catch (e) {
+          var timeoutID = window.setTimeout(gaLoaded, 5000);
+          console.log(timeoutID);
+        }
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <meta charset="utf-8">
+    <title>Old GA Test</title>
+  </head>
+  <body>
+    <p>
+      This is test purpose page for ga.js library
+    </p>
+
+  </body>
+</html>
