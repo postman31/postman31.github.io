@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>universal sessionId tracking</title>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-104159484-1', 'auto');
+    ga(function(tracker) {
+      console.log('tracker initiated');
+      var clientId = tracker.get('clientId');
+      var sessionIdFromCookie = document.cookie.match(/__f_utma=([^;]*)/);
+      function uuid(a){
+        return a?(a^Math.random()*16>>a/4).toString(16):([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,uuid)
+      }
+      if (sessionIdFromCookie && sessionIdFromCookie[1]) {
+        sessionIdFromCookie = clientId + '.' + sessionIdFromCookie[1];
+      } else {
+        sessionIdFromCookie = uuid();
+        document.cookie = "__f_utma="+sessionIdFromCookie;
+        sessionIdFromCookie = clientId + '.' + sessionIdFromCookie;
+      }
+      tracker.set('dimension2', sessionIdFromCookie)
+      console.log(sessionIdFromCookie);
+    });
+    ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <p>for testing purposes</p>
+  </body>
+</html>
