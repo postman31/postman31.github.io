@@ -12,7 +12,19 @@
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
         // Added lines
         gaLoaded = function () {
-          console.log(document.cookie);
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          var sessionId = document.cookie.match(/__utma=([^;]*)/)[1]
+          ga('create', 'UA-104159484-1', 'auto');
+          ga('set', 'dimension1', sessionId);
+          ga('send', {
+            hitType: 'event',
+            eventCategory: 'sessionId',
+            eventAction: 'suctom',
+            nonInteraction, true
+          });
         }
         try {
           ga.onload = gaLoaded
