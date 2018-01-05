@@ -13,15 +13,16 @@
     ga(function(tracker) {
       console.log('tracker initiated');
       var clientId = tracker.get('clientId');
-      var sessionIdFromCookie = document.cookie.match(/__f_utma=([^;]*)/);
       function uuid(a){
         return a?(a^Math.random()*16>>a/4).toString(16):([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,uuid)
       }
+      var sessionIdFromCookie = document.cookie.match(/__f_utma=([^;]*)/);
       if (sessionIdFromCookie && sessionIdFromCookie[1]) {
+        document.cookie = '__f_utma=' + sessionIdFromCookie[1] + ';max-age=1800';
         sessionIdFromCookie = clientId + '.' + sessionIdFromCookie[1];
       } else {
         sessionIdFromCookie = uuid();
-        document.cookie = "__f_utma="+sessionIdFromCookie;
+        document.cookie = '__f_utma=' + sessionIdFromCookie + ';max-age=1800';
         sessionIdFromCookie = clientId + '.' + sessionIdFromCookie;
       }
       tracker.set('dimension2', sessionIdFromCookie)
