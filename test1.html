@@ -2,11 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>test page 1</title>
-    <script>
-      dataLayer = window.dataLayer || [];
-      dataLayer.push({'event': 'check'})
-    </script>
+    <title>facebook events as GA custom tags</title>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -18,9 +14,40 @@
     <!-- End Google Tag Manager -->
   </head>
   <body>
-    
+
     <h1 id='title'>test page 1</h1>
-    <p><a href="/iframe.html">link</a> to test iframe page</p>
-    
+    <div class="container"><button class="blue">Click me</button><button>Or click me</button></div>
+    <p>
+      On this page Google Analytics events tags are fired by button click trigger. Facebook pixel event tag is sent as a custom task of Google Analytics Event. Check your dev tools for more.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <!-- <p><a href="/iframe.html">link</a> to test iframe page</p> -->
+
   </body>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Nunito');
+  body {
+    font-family: 'Nunito', sans-serif;
+  }
+  button {
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: steelblue;
+    border: none;
+    border-radius: 4px;
+    height: 24px;
+    margin: 4px;
+    outline: none;
+  }
+  button:active {
+    border: 0px;
+  }
+  button:hover {
+    background-color: darkslateblue;
+  }
+  </style>
 </html>
