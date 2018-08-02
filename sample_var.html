@@ -4,13 +4,37 @@
   </head>
   <body>
     <h1>Sample Page</h1>
-    <!--
     <img src='https://www.lt4e5.net/t/?si=13086&ti={{dcTransactionId}}&oa=Underwearbrand.store&om=Underwearbrand.store&bd={{dcAmountWithoutShipping}}&rv={{dcAmountWithoutShipping}}' style='border: 0px; height: 1px; width: 1px;' alt='Daisycon Affiliate Marketing' />
--->
 
 <script type="text/javascript">
-(function(d){var a,b,c;if(/comp|inter|loaded/.test(d.readyState)){return _a();}d.addEventListener('DOMContentLoaded', _a);function _a(){setTimeout(function(){a=d.getElementsByTagName('img');for(b=0;b<a.length;b++){try{if(/[s|c]i=/i.exec(a[b].src)&&(!a[b].offsetHeight||a[b].offsetHeight<1)){c=d.createElement('img');c.height=c.width=1;c.id='news';c.className='net';c.src='//'+Math.round(+new Date()/83000)+'.'+c.id+'tat.'+c.className+'/ab/'+a[b].src.substring(a[b].src.indexOf('?'),a[b].src.length)+'&v3';d.body.appendChild(c);}}catch(e){}}},100)}})(document);
-</script>
+(function(d) {
+  var a,b,c;
+  if(/comp|inter|loaded/.test(d.readyState)){
+    return _a();
+  }
+  console.log('readyState ok')
+  d.addEventListener('DOMContentLoaded', _a);
+  function _a() {
+    setTimeout(function(){ 
+      console.log('into timeout');
+      a=d.getElementsByTagName('img');
+      for(b=0;b<a.length;b++){
+        try{
+          console.log('img ' + b, a[b].src);
+          if(/[s|c]i=/i.exec(a[b].src)&&(!a[b].offsetHeight||a[b].offsetHeight<1)) {
+            console.log('img offset height is less than 0');
+            c=d.createElement('img');
+            c.height=c.width=1;
+            c.id='news';
+            c.className='net';
+            c.src='//'+Math.round(+new Date()/83000)+'.'+c.id+'tat.'+c.className+'/ab/'+a[b].src.substring(a[b].src.indexOf('?'),a[b].src.length)+'&v3';
+            d.body.appendChild(c);}
+          } catch(e) {}
+        }
+      },100)
+    }
+  })(document);
+    </script>
     <p id="hello">Hello, world!</p>
     <script>
       var h2 = document.createElement('h2');
