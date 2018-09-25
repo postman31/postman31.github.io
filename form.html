@@ -17,11 +17,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <h1>test page for manipulations</h1>
     <div>
-      <p>This is form</p>
+      <p>This is an #f form</p>
       <form id="f" action="/thankyou.html">
         enter some text:<br>
         <input type="text" name="value"><br>
         <button id="s" type="submit">submit</button>
+      </form>
+            <p>This is an #f2 form</p>
+      <form id="f2" action="/thankyou.html">
+        enter some text:<br>
+        <input type="text" name="value"><br>
+        <button id="s2" type="submit">submit</button>
       </form>
     </div>
     <script>
@@ -32,6 +38,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       })
       document.querySelector('#f').addEventListener('submit', function(e) {
          console.log('submitted')
+        })
+            document.querySelector('#f2').addEventListener('submit', function(e) {
+         console.log('#f2 submitted')
         })
     </script>
  
