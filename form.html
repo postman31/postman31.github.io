@@ -34,6 +34,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       document.querySelector('#s').addEventListener('click', function(event) {
         console.log('click prevented');
         event.preventDefault();
+        event.stopPropagation();
         document.querySelector('#f').submit()
       })
       document.querySelector('#f').parentElement.addEventListener('submit',  function(event) {
