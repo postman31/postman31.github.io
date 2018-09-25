@@ -36,6 +36,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         event.preventDefault();
         document.querySelector('#f').submit()
       })
+      document.addEventListener('submit',  function(event) {
+        console.log('document sees submit');
+      })
       document.querySelector('#f').addEventListener('submit', function(e) {
          console.log('submitted')
         })
