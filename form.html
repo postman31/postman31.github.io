@@ -41,10 +41,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       })
       document.querySelector('#f').addEventListener('submit', function(e) {
          console.log('submitted')
-        })
-            document.querySelector('#f2').addEventListener('submit', function(e) {
-         console.log('#f2 submitted')
-        })
+      })
+      document.querySelector('#f2').addEventListener('submit', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        console.log('#f2 submitted')
+      })
     </script>
  
   </body>
