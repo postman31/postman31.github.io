@@ -25,14 +25,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </form>
     </div>
     <script>
-    document.querySelector('s').addEventListener('click', funtion(e) {
-      e.preventDefalut();
-      console.log('click prevented');
-      document.querySelector('f').submit()
-    })
-    document.querySelector('f').addEventListener('submit', funtion(e) {
-       console.log('submitted')
+      document.querySelector('s').addEventListener('click', function(e) {
+        e.preventDefalut();
+        console.log('click prevented');
+        document.querySelector('f').submit()
       })
+      document.querySelector('f').addEventListener('submit', function(e) {
+         console.log('submitted')
+        })
     </script>
  
   </body>
