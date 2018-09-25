@@ -25,9 +25,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </form>
     </div>
     <script>
-      document.querySelector('#s').addEventListener('click', function(e) {
-        e.preventDefalut();
+      document.querySelector('#s').addEventListener('click', function(event) {
         console.log('click prevented');
+        event.preventDefault();
         document.querySelector('#f').submit()
       })
       document.querySelector('#f').addEventListener('submit', function(e) {
