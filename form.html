@@ -31,7 +31,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <script>
       document.querySelector('#s').addEventListener('click', function(event) {
-        return false;
         console.log('click prevented');
         event.preventDefault();
         event.stopPropagation();
