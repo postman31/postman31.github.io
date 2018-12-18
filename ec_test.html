@@ -3,16 +3,27 @@
 <!-- Google Tag Manager -->
 <script src="https://cdn.optimizely.com/js/3537691444.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function() {
-    var frames = document.querySelectorAll('iframe');
-    frames.forEach(function(frame) {
-      frame.src = "/thankyou.html";
-    });
-    console.log('DOMContentLoaded executed');
-  });
-  window.onload = function () {
-    console.log('window.onload executed');
-  };
+window.dataLayer = window.dataLayer || [];
+dataLayer.push({
+   'transactionId': '1234',
+   'transactionAffiliation': 'Acme Clothing',
+   'transactionTotal': 38.26,
+   'transactionTax': 1.29,
+   'transactionShipping': 5,
+   'transactionProducts': [{
+       'sku': 'DD44',
+       'name': 'T-Shirt',
+       'category': 'Apparel',
+       'price': 11.99,
+       'quantity': 1
+   },{
+       'sku': 'AA1243544',
+       'name': 'Hat',
+       'category': 'Apparel',
+       'price': 9.99,
+       'quantity': 2
+   }]
+});
 </script>
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -31,6 +42,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>some product</div>
     <div><a href="/thankyou.html">thank you page</a></div>
     <span><button>click me please</button></span>
-    <iframe src="/iframe.html"></iframe>
   </body>
 </html>
