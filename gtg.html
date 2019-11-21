@@ -15,7 +15,7 @@
 function change_page_function(page_nm)
 {
     var page = {'page':page_nm};
-    history.pushState(page, page_nm, 'http://www.exampleurl.com/googletag/'+page_nm);
+    history.pushState(page, page_nm, document.location.origin+page_nm);
     gtag('event', 'page_view', {'page_title' : page_nm, 'page_path' : "/"+page_nm});
     //gtag('config', 'UA-XXXXXX-1', {'page_path': page_nm});
 }
