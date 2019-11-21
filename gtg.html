@@ -1,0 +1,28 @@
+<html>
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXX-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-XXXXXX-1', {'send_page_view': true});
+</script>
+
+<title>Single Page</title>
+<script>
+function change_page_function(page_nm)
+{
+    var page = {'page':page_nm};
+    history.pushState(page, page_nm, 'http://www.exampleurl.com/googletag/'+page_nm);
+    gtag('event', 'page_view', {'page_title' : page_nm, 'page_path' : "/"+page_nm});
+    //gtag('config', 'UA-XXXXXX-1', {'page_path': page_nm});
+}
+</script>
+</head>
+<body>
+    <a onclick="change_page_function('One');return false;" href="javascript:void(0);">Page 1</a>
+    <a onclick="change_page_function('Two');return false;" href="javascript:void(0);">Page 2</a>
+</body>
+</html>
