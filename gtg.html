@@ -6,8 +6,8 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'UA-XXXXXX-1', {'send_page_view': true});
+  gtag('set', {'custom_map': {'dimension1': 'test_cs1'}}
+  gtag('config', 'UA-84672218-1', {'send_page_view': true, 'test_cs1': +new Date()});
 </script>
 
 <title>Single Page</title>
@@ -21,7 +21,12 @@ function change_page_function(page_nm)
 </script>
 </head>
 <body>
+  <div>
     <a onclick="change_page_function('One');return false;" href="javascript:void(0);">Page 1</a>
     <a onclick="change_page_function('Two');return false;" href="javascript:void(0);">Page 2</a>
+  </div>
+  <div>
+    <p>Lorem ipsum</p>
+  </div>
 </body>
 </html>
