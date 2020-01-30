@@ -2,29 +2,50 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>facebook events as GA custom tags</title>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KP5Q5D');</script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <title>A+W events</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-99ZQX54ZVZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    <!-- End Google Tag Manager -->
+      gtag('config', 'G-99ZQX54ZVZ');
+    </script>
   </head>
   <body>
 
     <h1 id='title'>test page 1</h1>
     <div class="container"><button class="blue">Click me</button><button>Or click me</button></div>
     <p>
-      On this page Google Analytics events tags are fired by button click trigger. Facebook pixel event tag is sent as a custom task of Google Analytics Event. Check your dev tools for more.
+      Check dev tools.
     </p>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
+    <script>
+      gtag('event', 'add_to_cart', {
+        "value": 5,
+        "currency": "USD",
+        "items": [
+          {
+            "id": "P12345",
+            "name": "Android Warhol T-Shirt",
+            "category": "Apparel/T-Shirts",
+            "Quantity": 2,
+            "price": 19.99
+          },
+          {
+            "id": "P67890",
+            "name": "Treble Clef Tank Top",
+            "category": "Apparel/T-Shirts",
+            "quantity": 1,
+            "price": 13.50
+          }
+        ]
+      });
+    </script>
 
-    <!-- <p><a href="/iframe.html">link</a> to test iframe page</p> -->
 
   </body>
   <style>
