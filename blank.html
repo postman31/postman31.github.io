@@ -3,14 +3,20 @@
   <head>
     <meta charset="utf-8">
     <title>Test Page With No Snippets</title>
-    <!--noptimize-->
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-NQWPPKV');
-    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-84672218-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  let customTask = (model)=>{
+    console.log(`hello from custom task of tracked ${model.get('clientId')}`)
+  }
+  gtag('set', {'custom_task' : customTask}
+
+  gtag('config', 'UA-84672218-1');
+</script>
   </head>
   <body>
     <h1>Hello, visitor!</h1>
