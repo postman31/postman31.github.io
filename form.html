@@ -17,11 +17,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1>test page for manipulations</h1>
     <div>
       <p>This is an #f form</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum</p>
       <form id="f" action="/thankyou.html">
         enter some text:<br>
         <input type="text" name="value"><br>
         <button id="s" type="submit">submit</button>
       </form>
+      <div>
+        <button id="btn"> click me </button>
+      </div>
     </div>
     <script>
       document.querySelector('#s').addEventListener('click', function(event) {
@@ -29,6 +37,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         event.preventDefault();
         document.querySelector('#f').submit()
       })
+       document.querySelector('#btn').addEventListener('click', function(event) {
+        var selection = window.getSelection();
+        var range = selection.getRangeAt(0);
+        var result = $('a', range.commonAncestorContainer).filter(function() {
+          return selection.containsNode(this);
+        });
+        console.log(result);
+
+       })
     </script>
  
   </body>
