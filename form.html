@@ -19,9 +19,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>This is an #f form</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
         ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        laboris nisi ut <a href="example.com">aliquip ex</a> ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
         velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+        sunt in culpa qui <a href="example.com">aliquip ex 33</a> officia deserunt mollit anim id est laborum</p>
       <form id="f" action="/thankyou.html">
         enter some text:<br>
         <input type="text" name="value"><br>
@@ -40,9 +40,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        document.querySelector('#btn').addEventListener('click', function(event) {
         var selection = window.getSelection();
         var range = selection.getRangeAt(0);
-        var result = $('a', range.commonAncestorContainer).filter(function() {
-          return selection.containsNode(this);
-        });
+        var links = range.commonAncestorContainer.querySelectorAll('a');
+        var result = []
+        links.forEach(function (node) {
+          if (selection.containsNode(node) { result.push(node) };
+        })
         console.log(result);
 
        })
